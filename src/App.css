@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+.outerbox {
+  padding: 20px;
+  flex: 1;
+  flex-direction: row;
+  width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  gap: 10;
+  row-gap: 10;
+}
+
+.innerbox {
+  flex: 1;
+  flex-direction: row;
+}
+
+.button {
+  background-color: tomato;
+  padding: 6px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+}
+
+.input {
+  padding: 6px;
+  border-radius: 10px;
+  border-color: tomato;
+}
+
+.mainouter {
+  background-color: black;
+  padding: 10px;
+}
