@@ -13,6 +13,8 @@ export default function ThreeScene() {
     const [lineSize, setLineSize] = useState(0);
     const [updating] = useAtom(updatingAtom);
 
+    const [cameraPosition, setCameraPosition] = useState(25);
+
     const numbers = [0,1,2,3,4,5,6,7,8,9];
 
     function calculateFunc(xValue: number) {
@@ -103,8 +105,8 @@ export default function ThreeScene() {
         }
 
         function updateGraphWithFunction() {
-            //start with discrete first and 2d 
-            const material = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
+            //setup shadermaterial and geometry
+            const material = new THREE.ShaderMaterial();
             const geometry = new THREE.BufferGeometry();
             let vertices = [];
             //calculate x and y:
@@ -123,7 +125,7 @@ export default function ThreeScene() {
                 }
             }
             //render
-            geometry.setAttribute("position", new THREE.Float32BufferAttribute(vertices, 5));
+            geometry.setAttribute("position", new THREE.Float32BufferAttribute(vertices, 3));
             //then mesh
             const mesh = new THREE.Mesh(geometry, material);
             scene.add(mesh);
